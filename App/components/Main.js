@@ -7,7 +7,8 @@ import {
   TouchableHighlight,
   ActivityIndicatorIOS
 } from 'react-native'
-import { api } from '../Utils/api'
+import { api } from '../utils/api'
+import Dashboard from './Dashboard';
 
 const styles = StyleSheet.create({
   mainContainer: {
