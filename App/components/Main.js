@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
-  StyleSheet
+  StyleSheet,
+  TextInput,
+  TouchableHighlight,
+  ActivityIndicatorIOS
 } from 'react-native'
 
 const styles = StyleSheet.create({
@@ -51,13 +54,37 @@ const styles = StyleSheet.create({
 
 
 export default class Main extends Component {
+   constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      isLoading: false,
+      error: false
+    }
+  }
+  handleChange(event) {
+     this.setState({
+       username: event.nativeEvent.text
+     })
+   }
+
+   
 
 
   render() {
     return (
       <View style={styles.mainContainer}>
         <Text style={styles.title}>Search for a github user</Text>
-
+        <TextInput
+          style={styles.searchInput}
+          value={this.state.username}
+          onChange={this.handleChange.bind(this)}
+        />
+        <TouchableHighlight
+          style={styles.button}
+          underlayColor='white'>
+          <Text style={styles.buttonText}> SEARCH </Text>
+        </TouchableHighlight>
       </View>
     );
   }
