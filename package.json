@@ -1,5 +1,5 @@
 {
-	"name": "githubNotetaker",
+	"name": "githubNotetaker-mc",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -18,5 +18,10 @@
 	},
 	"jest": {
 		"preset": "react-native"
-	}
+	},
+	"description": "practice tutorial egghead RN Fundamentals3",
+	"main": "index.js",
+	"repository": "git@github.com:MyaElla/egghead-rn-basics.git",
+	"author": "Mihaela Ciobanu <mihaela.ciobanu@connected-space.co.uk>",
+	"license": "MIT"
 }
