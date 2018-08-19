@@ -65,10 +65,18 @@ export default class Main extends Component {
   handleChange(event) {
      this.setState({
        username: event.nativeEvent.text
-     })
+     });
    }
 
-   
+   handleSubmit() {
+   // update spinning indicator
+   this.setState({
+     isLoading: true
+   });
+   console.log('SUBMIT', this.state.username);
+   // fetch data from github
+   //reroute to the next route, passing github info
+ }
 
 
   render() {
@@ -82,7 +90,8 @@ export default class Main extends Component {
         />
         <TouchableHighlight
           style={styles.button}
-          underlayColor='white'>
+          underlayColor='white'
+          onPress={this.handleSubmit.bind(this)}>
           <Text style={styles.buttonText}> SEARCH </Text>
         </TouchableHighlight>
       </View>
