@@ -8,7 +8,7 @@ import {
   TouchableHighlight
 } from 'react-native'
 
-import Badge from './Badge'
+import Profile from './Profile'
 
 var styles = StyleSheet.create({
   container: {
@@ -48,8 +48,8 @@ export default class Dashboard extends Component {
   goToProfile() {
     console.log('Go to profile');
    this.props.navigator.push({
-     name: 'Profile',
-     component: Badge,
+     title: 'Profile Page',
+     component: Profile,
      passProps: {userInfo: this.props.userInfo}
    });
  }
