@@ -8,6 +8,7 @@ import {
   TouchableHighlight
 } from 'react-native'
 
+import Badge from './Badge'
 
 var styles = StyleSheet.create({
   container: {
@@ -46,7 +47,12 @@ export default class Dashboard extends Component {
 
   goToProfile() {
     console.log('Go to profile');
-  }
+   this.props.navigator.push({
+     name: 'Profile',
+     component: Badge,
+     passProps: {userInfo: this.props.userInfo}
+   });
+ }
   goToRepos() {
     console.log('Go to repos');
   }
@@ -80,7 +86,7 @@ export default class Dashboard extends Component {
         >
           <Text style={styles.buttonText}>View Notes</Text>
         </TouchableHighlight>
-        
+
       </View>
     )
   }
